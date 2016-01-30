@@ -45,11 +45,11 @@ public class ViewHolderAnimatorBuilder {
         return this;
     }
 
-    public ViewHolderAnimatorBuilder addObjectAnimator(ObjectAnimator objectAnimator){
+    public ViewHolderAnimatorBuilder addObjectAnimator(Animator objectAnimator){
         animators.add(objectAnimator);
         return this;
     }
-    public ViewHolderAnimatorBuilder addObjectAnimator(List<ObjectAnimator> objectAnimators){
+    public ViewHolderAnimatorBuilder addObjectAnimator(List<Animator> objectAnimators){
         animators.addAll(objectAnimators);
         return this;
     }
