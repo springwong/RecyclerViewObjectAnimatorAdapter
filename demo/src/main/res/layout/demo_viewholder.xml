@@ -7,10 +7,15 @@
     android:orientation="vertical">
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="150dp"
         android:scaleType="fitCenter"
         android:id="@+id/demoImage"
         android:src="@mipmap/ic_launcher" />
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/demoSeekBar" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

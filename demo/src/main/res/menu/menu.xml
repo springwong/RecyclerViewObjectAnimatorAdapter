@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_basic"
+        android:orderInCategory="100"
+        android:title="Basic"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/menu_resource"
+        android:orderInCategory="100"
+        android:title="From Resource"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/menu_animator_list"
+        android:orderInCategory="100"
+        android:title="Combine Animation"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/menu_translate"
+        android:orderInCategory="100"
+        android:title="Translate Animation"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/menu_view_holder_item"
+        android:orderInCategory="100"
+        android:title="ViewHolder item Animation"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/menu_circle_reveal"
+        android:orderInCategory="100"
+        android:title="Circle Reveal Animation"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/menu_single_col"
+        android:orderInCategory="100"
+        android:title="Single Col Animation"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/menu_multi_col"
+        android:orderInCategory="100"
+        android:title="Multiple Col Animation"
+        app:showAsAction="never"
+        />
+</menu>

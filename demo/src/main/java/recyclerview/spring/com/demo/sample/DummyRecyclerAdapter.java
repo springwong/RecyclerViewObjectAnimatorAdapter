@@ -25,8 +25,8 @@ public class DummyRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.View
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = mLayoutInflater.inflate(R.layout.demo_viewholder, null, false);
-        RecyclerView.LayoutParams lp = new RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        view.setLayoutParams(lp);
+//        RecyclerView.LayoutParams lp = new RecyclerView.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+//        view.setLayoutParams(lp);
         DummyViewHolder holder = new DummyViewHolder(view);
         return holder;
     }
@@ -44,10 +44,14 @@ public class DummyRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.View
     @Override
     public void onViewRecycled(RecyclerView.ViewHolder holder) {
         super.onViewRecycled(holder);
+        DummyViewHolder dummyViewHolder = (DummyViewHolder)holder;
+        dummyViewHolder.reset();
     }
 
     @Override
     public int getItemViewType(int position) {
         return super.getItemViewType(position);
     }
+
+
 }
