@@ -1,6 +1,8 @@
 package recyclerview.spring.com.library.helper;
 
+import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.view.View;
 import android.view.animation.Interpolator;
 
 import java.util.Arrays;
@@ -96,5 +98,15 @@ public class AnimatorHelper {
         animator.setDuration(0);
         animator.setInterpolator(null);
         return animator;
+    }
+    public static AnimatorSet getStandUpAnimator(View target){
+        float x = (target.getWidth() - target.getPaddingLeft() - target.getPaddingRight())/2
+                + target.getPaddingLeft();
+        float y = target.getHeight() - target.getPaddingBottom();
+        AnimatorSet animatorSet = new AnimatorSet();
+        animatorSet.playTogether(ObjectAnimator.ofFloat(target,"pivotX",x,x,x,x,x),
+                ObjectAnimator.ofFloat(target,"pivotY",y,y,y,y,y),
+                ObjectAnimator.ofFloat(target,"rotationX",55,-30,15,-15,0));
+        return animatorSet;
     }
 }
