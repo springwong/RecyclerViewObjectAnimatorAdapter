@@ -18,7 +18,7 @@ import recyclerview.spring.com.library.interfaces.ViewHolderFilter;
 /**
  * Created by Spring80917 on 30/01/2016.
  */
-public class RecyclerViewAnimationAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class RecyclerViewAnimatorAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
     private RecyclerView.Adapter<RecyclerView.ViewHolder> mAdapter;
     private Boolean isFirstOnly = false;
     private List<ViewHolderAnimator> viewHolderAnimators;
@@ -28,7 +28,7 @@ public class RecyclerViewAnimationAdapter extends RecyclerView.Adapter<RecyclerV
     //TODO: future try to add delay when start
     private int delayInterval = 400;
 
-    public RecyclerViewAnimationAdapter(RecyclerView.Adapter<RecyclerView.ViewHolder> adapter) {
+    public RecyclerViewAnimatorAdapter(RecyclerView.Adapter<RecyclerView.ViewHolder> adapter) {
         mAdapter = adapter;
         holderAnimatorMap = new WeakHashMap<>();
         viewHolderAnimators = new ArrayList<>();

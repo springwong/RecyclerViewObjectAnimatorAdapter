@@ -10,19 +10,16 @@ import android.util.DisplayMetrics;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.animation.DecelerateInterpolator;
 import android.view.animation.LinearInterpolator;
-import android.widget.FrameLayout;
 
 import java.util.Arrays;
 import java.util.List;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 import recyclerview.spring.com.demo.sample.DummyRecyclerAdapter;
-import recyclerview.spring.com.library.adapter.RecyclerViewAnimationAdapter;
+import recyclerview.spring.com.library.adapter.RecyclerViewAnimatorAdapter;
 import recyclerview.spring.com.library.animator.ViewHolderAnimator;
 import recyclerview.spring.com.library.builder.FakeViewBuilder;
 import recyclerview.spring.com.library.builder.ViewHolderAnimatorBuilder;
@@ -87,13 +84,13 @@ public class DemoActivity extends AppCompatActivity {
         return true;
     }
 
-    private RecyclerViewAnimationAdapter renewAdapter(List<ViewHolderAnimator> list){
+    private RecyclerViewAnimatorAdapter renewAdapter(List<ViewHolderAnimator> list){
         DummyRecyclerAdapter dummyRecyclerAdapter = new DummyRecyclerAdapter(this);
-        RecyclerViewAnimationAdapter recyclerViewAnimationAdapter = new RecyclerViewAnimationAdapter(dummyRecyclerAdapter);
+        RecyclerViewAnimatorAdapter recyclerViewAnimatorAdapter = new RecyclerViewAnimatorAdapter(dummyRecyclerAdapter);
         for(ViewHolderAnimator animator : list)
-            recyclerViewAnimationAdapter.addAdapterAnimator(animator);
-        recyclerView.setAdapter(recyclerViewAnimationAdapter);
-        return recyclerViewAnimationAdapter;
+            recyclerViewAnimatorAdapter.addAdapterAnimator(animator);
+        recyclerView.setAdapter(recyclerViewAnimatorAdapter);
+        return recyclerViewAnimatorAdapter;
     }
     protected void basicAnimation(){
         ViewHolderAnimator viewHolderAnimator = new ViewHolderAnimatorBuilder()
@@ -150,7 +147,7 @@ public class DemoActivity extends AppCompatActivity {
                 .addObjectAnimator(anim)
                 .addObjectAnimator(ObjectAnimator.ofFloat(null, "alpha", 0.2f, 1f).setDuration(1000))
                 .create();
-        RecyclerViewAnimationAdapter adapter = renewAdapter(Arrays.asList(viewHolderAnimator));
+        RecyclerViewAnimatorAdapter adapter = renewAdapter(Arrays.asList(viewHolderAnimator));
         adapter.setViewHolderFilter(new ViewHolderFilterImpl());
     }
     protected void multipleColAnimation(){
@@ -172,7 +169,7 @@ public class DemoActivity extends AppCompatActivity {
                 .setNumOfCol(numOfCol)
                 .setApplyOnCol(2)
                 .create();
-        RecyclerViewAnimationAdapter adapter = renewAdapter(Arrays.asList(viewHolderAnimator, leftViewHolderAnimator, rightViewHolderAnimator));
+        RecyclerViewAnimatorAdapter adapter = renewAdapter(Arrays.asList(viewHolderAnimator, leftViewHolderAnimator, rightViewHolderAnimator));
         adapter.setViewHolderFilter(new ViewHolderFilterImpl());
     }
     protected void basicAnimation2(){
@@ -212,13 +209,13 @@ public class DemoActivity extends AppCompatActivity {
                 .create();
 
         DummyRecyclerAdapter dummyRecyclerAdapter = new DummyRecyclerAdapter(this);
-        RecyclerViewAnimationAdapter recyclerViewAnimationAdapter = new RecyclerViewAnimationAdapter(dummyRecyclerAdapter);
-//        recyclerViewAnimationAdapter.addAdapterAnimator(viewHolderAnimator);
-        recyclerViewAnimationAdapter.addAdapterAnimator(rightViewHolderAnimator);
-        recyclerViewAnimationAdapter.addAdapterAnimator(leftViewHolderAnimator);
-        recyclerViewAnimationAdapter.addAdapterAnimator(propertyUpdateAnimator);
-        recyclerViewAnimationAdapter.setViewHolderFilter(new ViewHolderFilterImpl());
-        recyclerView.setAdapter(recyclerViewAnimationAdapter);
+        RecyclerViewAnimatorAdapter recyclerViewAnimatorAdapter = new RecyclerViewAnimatorAdapter(dummyRecyclerAdapter);
+//        recyclerViewAnimatorAdapter.addAdapterAnimator(viewHolderAnimator);
+        recyclerViewAnimatorAdapter.addAdapterAnimator(rightViewHolderAnimator);
+        recyclerViewAnimatorAdapter.addAdapterAnimator(leftViewHolderAnimator);
+        recyclerViewAnimatorAdapter.addAdapterAnimator(propertyUpdateAnimator);
+        recyclerViewAnimatorAdapter.setViewHolderFilter(new ViewHolderFilterImpl());
+        recyclerView.setAdapter(recyclerViewAnimatorAdapter);
     }
 
 }
